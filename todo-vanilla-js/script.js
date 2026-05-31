@@ -15,7 +15,7 @@ function login() {
 
     .then(response => {
         if(!response.ok) {
-             throw new Error(data.message || "The door is locked. Wrong key, wrong person, wrong vibe.");
+             throw new Error(data.message || "Login failed — the door is locked. Wrong key, wrong person, wrong vibe.");
         }
 
         return response.json();
@@ -48,7 +48,7 @@ function register() {
             alert("Registration Successful!");
             window.location.href = "login.html";
         } else {
-            return response.json().then(data => { throw new Error(data.message || "Universe rejected your signup. Try a different identity.")})
+            return response.json().then(data => { throw new Error(data.message || "Sign-up failed — the universe rejected your new identity. That email might already be taken.")})
         }
     }).catch(error => {
         alert(error.message);
@@ -115,7 +115,7 @@ function loadTodos() {
 
     .then(response => {
         if(!response.ok) {
-             throw new Error(data.message || "Knocked on the server's door. Nobody answered.");
+             throw new Error(data.message || "Couldn't load your todos — knocked on the server's door. Nobody answered.");
         }
 
         return response.json();
@@ -158,7 +158,7 @@ function addTodo() {
 
     .then(response => {
         if(!response.ok) {
-             throw new Error(data.message || "Knocked on the server's door. Nobody answered.");
+             throw new Error(data.message || "Todo creation failed — your brilliant idea refused to be born.");
         }
 
         return response.json();
@@ -185,7 +185,7 @@ function updateTodoStatus(todo) {
 
     .then(response => {
         if(!response.ok) {
-             throw new Error(data.message || "Update failed. The old version is holding on for dear life.");
+             throw new Error(data.message || "Status update failed — the old version is holding on for dear life.");
         }
 
         return response.json();
@@ -208,7 +208,7 @@ function deleteTodo(id) {
 
     .then(response => {
         if(!response.ok) {
-             throw new Error(data.message || "Todo said 'Not today!' and survived deletion.");
+             throw new Error(data.message || "Deletion failed — your todo said 'Not today!' and survived.");
         }
 
         return response.text();
