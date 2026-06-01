@@ -1,0 +1,11 @@
+# IDE
+.idea/
+.vscode/
+
+# Claude Code artifacts
+.claude/
+.playwright-mcp/
+CLAUDE.md
+
+# Spring Boot local secrets
+springboot-todo-api/src/main/resources/application.properties

@@ -3,13 +3,11 @@ server.port=8081
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/todosdb
 spring.datasource.driverClassName=org.postgresql.Driver
-spring.datasource.username=postgres
-spring.datasource.password=1234
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
 
 spring.h2.console.enabled=true
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.hibernate.ddl-auto=update
 
-
-
-
+jwt.secret=YOUR_JWT_SECRET_KEY_HERE
